@@ -8,8 +8,8 @@
 
 import Foundation
 
-let baseURL = "https://itunes.apple.com/search?entity=album&attribute=albumTerm&offset=0&limit=100&term="
-let albumURL = "https://itunes.apple.com/lookup?entity=song&id="
+let baseURL = Appearance.StringValues.baseURL
+let albumURL = Appearance.StringValues.albumURL
 
 class DataService {
     
@@ -24,18 +24,24 @@ class DataService {
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                    if let albumsResults = json["results"] as? NSArray {
+                    if let albumsResults = json[Appearance.StringValues.results] as? NSArray {
                         for album in albumsResults {
                             if let albumInfo = album as? [String: AnyObject] {
-                                guard let artistName = albumInfo["artistName"] as? String else {return}
-                                guard let artworkUrl100 = albumInfo["artworkUrl100"] as? String else {return}
-                                guard let collectionId = albumInfo["collectionId"] as? Int else {return}
-                                guard let collectionName = albumInfo["collectionName"] as? String else {return}
-                                guard let country = albumInfo["country"] as? String else {return}
-                                guard let primaryGenreName = albumInfo["primaryGenreName"] as? String else {return}
-                                guard let releaseDate = albumInfo["releaseDate"] as? String else {return}
+                                guard let artistName = albumInfo[Appearance.StringValues.artistName] as? String else {return}
+                                guard let artworkUrl100 = albumInfo[Appearance.StringValues.artworkUrl] as? String else {return}
+                                guard let collectionId = albumInfo[Appearance.StringValues.collectionId] as? Int else {return}
+                                guard let collectionName = albumInfo[Appearance.StringValues.collectionName] as? String else {return}
+                                guard let country = albumInfo[Appearance.StringValues.country] as? String else {return}
+                                guard let primaryGenreName = albumInfo[Appearance.StringValues.primaryGenreName] as? String else {return}
+                                guard let releaseDate = albumInfo[Appearance.StringValues.releaseDate] as? String else {return}
                                 let releaseDateFormatted = releaseDate.prefix(4)
-                                let albumInstance = Album(artistName: artistName, artworkUrl100: artworkUrl100, collectionId: collectionId, collectionName: collectionName, country: country, primaryGenreName: primaryGenreName, releaseDate: String(releaseDateFormatted))
+                                let albumInstance = Album(artistName: artistName,
+                                                          artworkUrl100: artworkUrl100,
+                                                          collectionId: collectionId,
+                                                          collectionName: collectionName,
+                                                          country: country,
+                                                          primaryGenreName: primaryGenreName,
+                                                          releaseDate: String(releaseDateFormatted))
                                 albums.append(albumInstance)
                             }
                         }
@@ -59,12 +65,12 @@ class DataService {
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                    if let trackResults = json["results"] as? NSArray {
+                    if let trackResults = json[Appearance.StringValues.results] as? NSArray {
                         for song in trackResults {
                             if trackResults.index(of: song) != 0 {
                                 if let songInfo = song as? [String: AnyObject] {
-                                    guard let trackName = songInfo["trackName"] as? String else {return}
-                                    guard let trackNumber = songInfo["trackNumber"] as? Int else {return}
+                                    guard let trackName = songInfo[Appearance.StringValues.trackName] as? String else {return}
+                                    guard let trackNumber = songInfo[Appearance.StringValues.trackNumber] as? Int else {return}
                                     let track = Track(trackName: trackName, trackNumber: trackNumber)
                                     tracks.append(track)
                                 }

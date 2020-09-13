@@ -9,7 +9,7 @@
 import UIKit
 
 class TrackCell: UITableViewCell {
-
+    
     @IBOutlet var trackName: UILabel!
     @IBOutlet var trackNumber: UILabel!
     
@@ -17,5 +17,4 @@ class TrackCell: UITableViewCell {
         trackNumber.text = String(track.trackNumber)
         trackName.text = track.trackName
     }
-
 }

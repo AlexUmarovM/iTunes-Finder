@@ -18,7 +18,13 @@ class Album {
     let primaryGenreName: String
     let releaseDate: String
     
-    init(artistName: String, artworkUrl100: String, collectionId: Int, collectionName: String, country: String, primaryGenreName: String, releaseDate: String) {
+    init(artistName: String,
+         artworkUrl100: String,
+         collectionId: Int,
+         collectionName: String,
+         country: String,
+         primaryGenreName: String,
+         releaseDate: String) {
         self.artistName = artistName
         self.artworkUrl100 = artworkUrl100
         self.collectionId = collectionId
@@ -27,5 +33,4 @@ class Album {
         self.primaryGenreName = primaryGenreName
         self.releaseDate = releaseDate
     }
-    
 }

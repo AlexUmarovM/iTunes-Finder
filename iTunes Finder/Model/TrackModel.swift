@@ -17,5 +17,4 @@ class Track {
         self.trackName = trackName
         self.trackNumber = trackNumber
     }
-    
 }

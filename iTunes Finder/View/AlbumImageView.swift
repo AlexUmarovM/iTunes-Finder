@@ -17,5 +17,4 @@ class AlbumImageView: UIImageView {
             layer.masksToBounds = cornerRadius > 0
         }
     }
-    
 }

@@ -20,6 +20,7 @@
 		FA40814C250E298900ACA8F5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40814B250E298900ACA8F5 /* AlbumCell.swift */; };
 		FA40814E250E2FD000ACA8F5 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40814D250E2FD000ACA8F5 /* TrackCell.swift */; };
 		FA408152250E320C00ACA8F5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA408151250E320C00ACA8F5 /* DetailViewController.swift */; };
+		FA854F53250E655B00C779A3 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA854F52250E655B00C779A3 /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FA40814B250E298900ACA8F5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		FA40814D250E2FD000ACA8F5 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		FA408151250E320C00ACA8F5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FA854F52250E655B00C779A3 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +74,7 @@
 			children = (
 				FA408126250E1D5100ACA8F5 /* AppDelegate.swift */,
 				FA408128250E1D5100ACA8F5 /* SceneDelegate.swift */,
-				FA408146250E1E0B00ACA8F5 /* DataService.swift */,
+				FA854F54250E656200C779A3 /* Service */,
 				FA408149250E1E2300ACA8F5 /* Model */,
 				FA408148250E1E1600ACA8F5 /* View */,
 				FA40814A250E1E3100ACA8F5 /* Controller */,
@@ -110,6 +112,15 @@
 				FA408151250E320C00ACA8F5 /* DetailViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA854F54250E656200C779A3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA408146250E1E0B00ACA8F5 /* DataService.swift */,
+				FA854F52250E655B00C779A3 /* Appearance.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				FA40813D250E1DAB00ACA8F5 /* AlbumModel.swift in Sources */,
 				FA40814E250E2FD000ACA8F5 /* TrackCell.swift in Sources */,
 				FA408127250E1D5100ACA8F5 /* AppDelegate.swift in Sources */,
+				FA854F53250E655B00C779A3 /* Appearance.swift in Sources */,
 				FA408152250E320C00ACA8F5 /* DetailViewController.swift in Sources */,
 				FA408129250E1D5100ACA8F5 /* SceneDelegate.swift in Sources */,
 				FA408147250E1E0B00ACA8F5 /* DataService.swift in Sources */,
