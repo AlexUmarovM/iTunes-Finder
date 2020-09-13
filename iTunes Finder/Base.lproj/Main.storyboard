@@ -59,13 +59,13 @@
                                         <constraint firstItem="lSh-j3-wv6" firstAttribute="centerX" secondItem="lw6-ST-ULG" secondAttribute="centerX" id="bQz-tq-cg5"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <connections>
-                                    <segue destination="SsG-0M-otb" kind="show" id="WY7-Xn-Z36"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                     </collectionView>
                     <navigationItem key="navigationItem" title="iTunes Finder" id="Whq-nw-rzQ"/>
+                    <connections>
+                        <segue destination="SsG-0M-otb" kind="show" identifier="DetailSegue" id="f6z-yF-Dq9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

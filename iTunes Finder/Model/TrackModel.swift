@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class Track {
+    
+    var trackName: String
+    var trackNumber: Int
+    
+    init(trackName: String, trackNumber: Int) {
+        self.trackName = trackName
+        self.trackNumber = trackNumber
+    }
+    
+}
