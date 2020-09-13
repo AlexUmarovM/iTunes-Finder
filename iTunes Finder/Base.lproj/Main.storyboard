@@ -11,7 +11,7 @@
         <!--iTunes Finder-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iTunes_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="iTunes_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DaI-LO-8Tp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -23,14 +23,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="t58-Al-tHL">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="t58-Al-tHL" customClass="AlbumCell" customModule="iTunes_Finder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="130" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lw6-ST-ULG">
                                     <rect key="frame" x="0.0" y="0.0" width="130" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lSh-j3-wv6">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lSh-j3-wv6" customClass="AlbumImageView" customModule="iTunes_Finder" customModuleProvider="target">
                                             <rect key="frame" x="15" y="0.0" width="100" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="5Dp-sH-ZRN"/>
@@ -40,13 +40,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Album" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA2-wd-k4u">
                                             <rect key="frame" x="30.5" y="108" width="69" height="16"/>
                                             <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test music" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFz-Qe-N3R">
                                             <rect key="frame" x="34.5" y="132" width="61.5" height="15"/>
                                             <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="16"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -59,10 +59,15 @@
                                         <constraint firstItem="lSh-j3-wv6" firstAttribute="centerX" secondItem="lw6-ST-ULG" secondAttribute="centerX" id="bQz-tq-cg5"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="albumArtistLabel" destination="SFz-Qe-N3R" id="SG8-37-Kzd"/>
+                                    <outlet property="albumImageView" destination="lSh-j3-wv6" id="oJe-IO-2jV"/>
+                                    <outlet property="albumTitleLabel" destination="aA2-wd-k4u" id="hJI-sB-4Zs"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="iTunes Finder" id="Whq-nw-rzQ"/>
+                    <navigationItem key="navigationItem" title="iTunes Finder" largeTitleDisplayMode="never" id="Whq-nw-rzQ"/>
                     <connections>
                         <segue destination="SsG-0M-otb" kind="show" identifier="DetailSegue" id="f6z-yF-Dq9"/>
                     </connections>
@@ -71,21 +76,188 @@
             </objects>
             <point key="canvasLocation" x="912.79999999999995" y="115.59220389805098"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="UVe-Ke-YcT">
             <objects>
-                <viewController id="SsG-0M-otb" sceneMemberID="viewController">
+                <viewController id="SsG-0M-otb" customClass="DetailViewController" customModule="iTunes_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BKN-Z9-luK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nzF-kz-U3I">
+                                <rect key="frame" x="0.0" y="204" width="375" height="463"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackCell" id="dS3-gn-Pn1" customClass="TrackCell" customModule="iTunes_Finder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dS3-gn-Pn1" id="0Ec-Dr-jTH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmV-ot-rDM">
+                                                    <rect key="frame" x="35" y="14" width="20" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="98Y-87-r1K"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhR-Fe-Q6G">
+                                                    <rect key="frame" x="63" y="14" width="277" height="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LmV-ot-rDM" firstAttribute="centerY" secondItem="0Ec-Dr-jTH" secondAttribute="centerY" id="3Hq-9b-Yp8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="IhR-Fe-Q6G" secondAttribute="trailing" constant="20" id="DiU-aE-ZSQ"/>
+                                                <constraint firstItem="IhR-Fe-Q6G" firstAttribute="leading" secondItem="LmV-ot-rDM" secondAttribute="trailing" constant="8" id="DtQ-LQ-Xwu"/>
+                                                <constraint firstItem="LmV-ot-rDM" firstAttribute="leading" secondItem="0Ec-Dr-jTH" secondAttribute="leadingMargin" constant="20" id="c4m-eq-yT7"/>
+                                                <constraint firstItem="IhR-Fe-Q6G" firstAttribute="centerY" secondItem="0Ec-Dr-jTH" secondAttribute="centerY" id="zgO-cz-PqQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="trackName" destination="IhR-Fe-Q6G" id="vlF-Uf-lc7"/>
+                                            <outlet property="trackNumber" destination="LmV-ot-rDM" id="14P-LJ-yac"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kOX-pl-akN">
+                                <rect key="frame" x="20" y="64" width="335" height="120"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-Az-u5z" customClass="AlbumImageView" customModule="iTunes_Finder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="tHI-8D-bBC"/>
+                                            <constraint firstAttribute="width" constant="120" id="xOX-VV-gJz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c1o-SV-GfL">
+                                        <rect key="frame" x="136" y="4" width="199" height="112"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="w4w-5M-WKI">
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="16"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Album:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwd-YJ-TaO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA8-Zg-1qD">
+                                                        <rect key="frame" x="102" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a7M-18-yL2">
+                                                <rect key="frame" x="0.0" y="24" width="199" height="16"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMv-Dj-eYz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdg-RV-uBg">
+                                                        <rect key="frame" x="102" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="13m-SP-fYF">
+                                                <rect key="frame" x="0.0" y="48" width="199" height="16"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFr-wG-zow">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHO-RY-2ZH">
+                                                        <rect key="frame" x="102" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fws-7e-rIb">
+                                                <rect key="frame" x="0.0" y="72" width="199" height="16"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNl-Jd-lVj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKp-wU-QSo">
+                                                        <rect key="frame" x="102" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="F5k-P5-cn0">
+                                                <rect key="frame" x="0.0" y="96" width="199" height="16"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Year:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZ6-Ob-J8v">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehA-nd-dva">
+                                                        <rect key="frame" x="102" y="0.0" width="97" height="16"/>
+                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="u3D-rf-hr1"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kOX-pl-akN" firstAttribute="top" secondItem="vjv-17-dmW" secondAttribute="top" constant="20" id="FW4-Xk-dAb"/>
+                            <constraint firstItem="nzF-kz-U3I" firstAttribute="trailing" secondItem="vjv-17-dmW" secondAttribute="trailing" id="LvH-9S-caT"/>
+                            <constraint firstItem="kOX-pl-akN" firstAttribute="leading" secondItem="vjv-17-dmW" secondAttribute="leading" constant="20" id="S4r-mY-mtI"/>
+                            <constraint firstItem="nzF-kz-U3I" firstAttribute="leading" secondItem="vjv-17-dmW" secondAttribute="leading" id="UHC-Dx-4au"/>
+                            <constraint firstItem="vjv-17-dmW" firstAttribute="trailing" secondItem="kOX-pl-akN" secondAttribute="trailing" constant="20" id="XVQ-hp-udf"/>
+                            <constraint firstItem="nzF-kz-U3I" firstAttribute="top" secondItem="kOX-pl-akN" secondAttribute="bottom" constant="20" id="lY7-tD-X0p"/>
+                            <constraint firstItem="nzF-kz-U3I" firstAttribute="bottom" secondItem="vjv-17-dmW" secondAttribute="bottom" id="ljA-RN-xkF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vjv-17-dmW"/>
                     </view>
                     <navigationItem key="navigationItem" id="wF8-53-s5G"/>
+                    <connections>
+                        <outlet property="albumLabel" destination="GA8-Zg-1qD" id="Yax-MH-jVZ"/>
+                        <outlet property="artistLabel" destination="xdg-RV-uBg" id="dlg-Jx-PWi"/>
+                        <outlet property="countryLabel" destination="OKp-wU-QSo" id="9UK-Jo-rHl"/>
+                        <outlet property="genreLabel" destination="nHO-RY-2ZH" id="jJM-8w-ZO0"/>
+                        <outlet property="imageView" destination="Jta-Az-u5z" id="xOO-Rr-e7x"/>
+                        <outlet property="tableView" destination="nzF-kz-U3I" id="jzn-RE-UDa"/>
+                        <outlet property="yearLabel" destination="ehA-nd-dva" id="6QG-iF-Ha4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02P-pU-sQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727" y="116"/>
+            <point key="canvasLocation" x="1725.5999999999999" y="115.59220389805098"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Upg-lH-Xpe">

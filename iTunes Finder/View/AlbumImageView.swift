@@ -6,4 +6,16 @@
 //  Copyright © 2020 Александр Умаров. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+@IBDesignable
+class AlbumImageView: UIImageView {
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
+        }
+    }
+    
+}

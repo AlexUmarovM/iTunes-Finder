@@ -13,13 +13,13 @@
 		FA40812E250E1D5100ACA8F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA40812C250E1D5100ACA8F5 /* Main.storyboard */; };
 		FA408130250E1D5800ACA8F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA40812F250E1D5800ACA8F5 /* Assets.xcassets */; };
 		FA408133250E1D5800ACA8F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA408131250E1D5800ACA8F5 /* LaunchScreen.storyboard */; };
-		FA40813B250E1D9500ACA8F5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40813A250E1D9500ACA8F5 /* DetailViewController.swift */; };
 		FA40813D250E1DAB00ACA8F5 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40813C250E1DAB00ACA8F5 /* AlbumModel.swift */; };
 		FA40813F250E1DB300ACA8F5 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40813E250E1DB300ACA8F5 /* TrackModel.swift */; };
-		FA408141250E1DC100ACA8F5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA408140250E1DC100ACA8F5 /* AlbumCell.swift */; };
-		FA408143250E1DCC00ACA8F5 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA408142250E1DCC00ACA8F5 /* TrackCell.swift */; };
 		FA408145250E1DF400ACA8F5 /* AlbumImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA408144250E1DF400ACA8F5 /* AlbumImageView.swift */; };
 		FA408147250E1E0B00ACA8F5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA408146250E1E0B00ACA8F5 /* DataService.swift */; };
+		FA40814C250E298900ACA8F5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40814B250E298900ACA8F5 /* AlbumCell.swift */; };
+		FA40814E250E2FD000ACA8F5 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40814D250E2FD000ACA8F5 /* TrackCell.swift */; };
+		FA408152250E320C00ACA8F5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA408151250E320C00ACA8F5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +31,13 @@
 		FA40812F250E1D5800ACA8F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA408132250E1D5800ACA8F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA408134250E1D5800ACA8F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA40813A250E1D9500ACA8F5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FA40813C250E1DAB00ACA8F5 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		FA40813E250E1DB300ACA8F5 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
-		FA408140250E1DC100ACA8F5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
-		FA408142250E1DCC00ACA8F5 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		FA408144250E1DF400ACA8F5 /* AlbumImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImageView.swift; sourceTree = "<group>"; };
 		FA408146250E1E0B00ACA8F5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		FA40814B250E298900ACA8F5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		FA40814D250E2FD000ACA8F5 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		FA408151250E320C00ACA8F5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 		FA408148250E1E1600ACA8F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA408140250E1DC100ACA8F5 /* AlbumCell.swift */,
-				FA408142250E1DCC00ACA8F5 /* TrackCell.swift */,
+				FA40814B250E298900ACA8F5 /* AlbumCell.swift */,
+				FA40814D250E2FD000ACA8F5 /* TrackCell.swift */,
 				FA408144250E1DF400ACA8F5 /* AlbumImageView.swift */,
 			);
 			path = View;
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				FA40812A250E1D5100ACA8F5 /* MainViewController.swift */,
-				FA40813A250E1D9500ACA8F5 /* DetailViewController.swift */,
+				FA408151250E320C00ACA8F5 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,13 +185,13 @@
 			files = (
 				FA40812B250E1D5100ACA8F5 /* MainViewController.swift in Sources */,
 				FA40813F250E1DB300ACA8F5 /* TrackModel.swift in Sources */,
+				FA40814C250E298900ACA8F5 /* AlbumCell.swift in Sources */,
 				FA408145250E1DF400ACA8F5 /* AlbumImageView.swift in Sources */,
 				FA40813D250E1DAB00ACA8F5 /* AlbumModel.swift in Sources */,
-				FA408141250E1DC100ACA8F5 /* AlbumCell.swift in Sources */,
+				FA40814E250E2FD000ACA8F5 /* TrackCell.swift in Sources */,
 				FA408127250E1D5100ACA8F5 /* AppDelegate.swift in Sources */,
+				FA408152250E320C00ACA8F5 /* DetailViewController.swift in Sources */,
 				FA408129250E1D5100ACA8F5 /* SceneDelegate.swift in Sources */,
-				FA40813B250E1D9500ACA8F5 /* DetailViewController.swift in Sources */,
-				FA408143250E1DCC00ACA8F5 /* TrackCell.swift in Sources */,
 				FA408147250E1E0B00ACA8F5 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

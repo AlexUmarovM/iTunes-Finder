@@ -6,4 +6,16 @@
 //  Copyright © 2020 Александр Умаров. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class TrackCell: UITableViewCell {
+
+    @IBOutlet var trackName: UILabel!
+    @IBOutlet var trackNumber: UILabel!
+    
+    func updateCell (track: Track) {
+        trackNumber.text = String(track.trackNumber)
+        trackName.text = track.trackName
+    }
+
+}
