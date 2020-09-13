@@ -10,8 +10,8 @@ import UIKit
 
 class TrackCell: UITableViewCell {
     
-    @IBOutlet var trackName: UILabel!
-    @IBOutlet var trackNumber: UILabel!
+    @IBOutlet weak var trackName: UILabel!
+    @IBOutlet weak var trackNumber: UILabel!
     
     func updateCell (track: Track) {
         trackNumber.text = String(track.trackNumber)

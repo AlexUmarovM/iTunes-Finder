@@ -10,9 +10,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    @IBOutlet var collectionView: UICollectionView!
-    lazy var searchBar: UISearchBar = UISearchBar()
-    var albums = [Album]()
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var placeholderImage: UIImageView!
+    private lazy var searchBar: UISearchBar = UISearchBar()
+    private var albums = [Album]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    func setupViews() {
+   private func setupViews() {
         searchBar.searchTextField.backgroundColor = .white
         searchBar.placeholder = Appearance.StringValues.searchBarPlaceholder
         searchBar.sizeToFit()
@@ -82,12 +83,13 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension MainViewController: UISearchBarDelegate {
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text != nil || searchBar.text != "" {
             DataService.instance.getAlbums(searchRequest: searchBar.text!) { (requestedAlbums) in
                 self.albums = requestedAlbums.sorted(by: {$0.collectionName < $1.collectionName})
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
+                    self.placeholderImage.isHidden = true
                 }
             }
         }

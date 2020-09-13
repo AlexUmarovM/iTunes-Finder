@@ -8,8 +8,8 @@
 
 import Foundation
 
-let baseURL = Appearance.StringValues.baseURL
-let albumURL = Appearance.StringValues.albumURL
+private let baseURL = Appearance.StringValues.baseURL
+private let albumURL = Appearance.StringValues.albumURL
 
 class DataService {
     

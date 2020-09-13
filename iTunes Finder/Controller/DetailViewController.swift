@@ -10,17 +10,18 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet var albumLabel: UILabel!
-    @IBOutlet var artistLabel: UILabel!
-    @IBOutlet var genreLabel: UILabel!
-    @IBOutlet var countryLabel: UILabel!
-    @IBOutlet var yearLabel: UILabel!
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var albumLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageView: UIImageView!
     
     var album: Album!
     var image: UIImage!
-    var tracks = [Track]()
+    
+   private var tracks = [Track]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class DetailViewController: UIViewController {
         loadTracks()
     }
     
-    func updateLabels () {
+    private func updateLabels () {
         albumLabel.text = album.collectionName
         artistLabel.text = album.artistName
         genreLabel.text = album.primaryGenreName
@@ -39,7 +40,7 @@ class DetailViewController: UIViewController {
         imageView.image = image
     }
     
-    func loadTracks() {
+    private func loadTracks() {
         DataService.instance.getAlbumTracks(collectionId: album.collectionId) { (requestedTracks) in
             self.tracks = requestedTracks
             DispatchQueue.main.async {

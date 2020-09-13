@@ -9,9 +9,9 @@
 import UIKit
 
 class AlbumCell: UICollectionViewCell {
-    @IBOutlet var albumImageView: UIImageView!
-    @IBOutlet var albumTitleLabel: UILabel!
-    @IBOutlet var albumArtistLabel: UILabel!
+    @IBOutlet weak var albumImageView: UIImageView!
+    @IBOutlet weak var albumTitleLabel: UILabel!
+    @IBOutlet weak var albumArtistLabel: UILabel!
     
     func updateCell (album: Album) {
         let imageUrl = URL(string: album.artworkUrl100)
